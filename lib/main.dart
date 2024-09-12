@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_web_frame/flutter_web_frame.dart';
 import 'package:gsm_inside_flutter/router.dart';
+import 'package:gsm_inside_flutter/views/splash/splash_page.dart';
 
 void main() async {
   await dotenv.load(fileName: '.env');
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
       maximumSize: const Size(600, 812),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       builder: (context) => isWeb(
-        MaterialApp.router(
+        MaterialApp(
           theme: ThemeData(
             useMaterial3: true,
             scaffoldBackgroundColor: Colors.white,
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           title: 'GSM-Inside',
-          routerConfig: PageRouter.router,
+          home: const SplashPage(),
         ),
       ),
     );

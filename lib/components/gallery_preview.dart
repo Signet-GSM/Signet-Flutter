@@ -60,11 +60,11 @@ ranking(int hot) {
     case 1:
       color = GIColorMain.main600_05A4E9;
     case 2:
-      color = GIColorMain.main500_2FB3ED;
+      color = GIColorMain.main600_05A4E9.withOpacity(0.9);
     case 3:
       color = GIColorMain.main400_58C2F0;
     case 4:
-      color = GIColorMain.main300_82D2F4;
+      color = GIColorMain.main600_05A4E9.withOpacity(0.3);
     case 5:
       color = GIColorMain.main200_ACE1F8;
   }

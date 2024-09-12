@@ -6,12 +6,13 @@ class GIText extends StatelessWidget {
   final double size;
   final Color color;
 
-  const GIText(
-      {super.key,
-      required this.text,
-      required this.fontSize,
-      required this.size,
-      required this.color});
+  const GIText({
+    super.key,
+    required this.text,
+    required this.fontSize,
+    required this.size,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {

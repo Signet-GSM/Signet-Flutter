@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:gsm_inside_flutter/components/add_gallery.dart';
+import 'package:gsm_inside_flutter/components/board_preview.dart';
 import 'package:gsm_inside_flutter/components/gallery_preview.dart';
 import 'package:gsm_inside_flutter/designSystem/gi_color.dart';
 import 'package:gsm_inside_flutter/designSystem/gi_fontsize.dart';
 import 'package:gsm_inside_flutter/designSystem/gi_image.dart';
 import 'package:gsm_inside_flutter/designSystem/gi_text.dart';
-import 'package:gsm_inside_flutter/models/board_api_model.dart';
-import 'package:gsm_inside_flutter/models/gallery_api_model.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -18,10 +17,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  List<BoardGetApi> posts = [];
-  List<GalleryGetApiModel> gallerys = [];
-  List<GalleryGetApiModel> postsDetail = [];
-  bool loading = false;
+  var loading = true;
 
   @override
   Widget build(BuildContext context) {
@@ -98,14 +94,9 @@ class _HomepageState extends State<Homepage> {
                             color: GIColorBlack.grey200,
                           ),
                         ),
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: gallerys.length < 5 ? gallerys.length : 5,
-                          itemBuilder: (context, index) => GalleryPreview(
-                            title: gallerys[index].name,
-                            hot: index + 1,
-                          ),
+                        child: const GalleryPreview(
+                          title: 'gdg',
+                          hot: 1,
                         ),
                       ),
                       const SizedBox(
@@ -149,14 +140,12 @@ class _HomepageState extends State<Homepage> {
                       const SizedBox(
                         height: 16,
                       ),
-                      ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: posts.length,
-                        itemBuilder: (context, index) {
-                          return null;
-                        },
-                      ),
+                      const BoardPreview(galleryTitle: 'asdf', date: 'asdf', title: 'asdf', content: 'asdf', like: 1, comment: 2),
+                      const BoardPreview(galleryTitle: 'asdf', date: 'asdf', title: 'asdf', content: 'asdf', like: 1, comment: 2),
+                      const BoardPreview(galleryTitle: 'asdf', date: 'asdf', title: 'asdf', content: 'asdf', like: 1, comment: 2),
+                      const BoardPreview(galleryTitle: 'asdf', date: 'asdf', title: 'asdf', content: 'asdf', like: 1, comment: 2),
+                      const BoardPreview(galleryTitle: 'asdf', date: 'asdf', title: 'asdf', content: 'asdf', like: 1, comment: 2),
+                      const BoardPreview(galleryTitle: 'asdf', date: 'asdf', title: 'asdf', content: 'asdf', like: 1, comment: 2)
                     ],
                   ),
                 ),
